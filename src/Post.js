@@ -11,7 +11,7 @@ import {Link} from "react-router-dom";
 
 
 
-function Post({displayName,username,verified,text,image,avatar,comments,shares,likes,twitterId}) {
+function Post({displayName,username,verified,title,content,avatar,comments,shares,likes,twitterId}) {
     const [commentCount, setCommentCount] = useState(0);
     const [repeatCount, setRepeatCount] = useState(0);
     const [likeCount, setLikeCount] = useState(0);
@@ -36,9 +36,9 @@ function Post({displayName,username,verified,text,image,avatar,comments,shares,l
                         </h3>
                     </div>
                     <div className = "post__headerDescription">
-                        <p> {text} </p> 
+                        <p> {title} </p> 
                     </div>
-                    <img src= {image} alt= "" />
+                    <img src= {content} alt= "" />
                     <div className = "post__footer">
                         <span className ="post__chatSpan"> <ChatBubbleOutlineIcon className = "post__chatStyling" fontSize="small" onClick={() => setCommentCount(commentCount + 1)}   />
                             <span className = "post__chatFormating">{comments + commentCount} </span>
