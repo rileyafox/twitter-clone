@@ -11,7 +11,7 @@ import {Link} from "react-router-dom";
 
 
 
-function Post({displayName,username,verified,title,content,avatar,comments,shares,likes,twitterId}) {
+function Post({displayName,username,verified,title,content,avatar,comments,shares,likes,id}) {
     const [commentCount, setCommentCount] = useState(0);
     const [repeatCount, setRepeatCount] = useState(0);
     const [likeCount, setLikeCount] = useState(0);
@@ -19,7 +19,7 @@ function Post({displayName,username,verified,title,content,avatar,comments,share
     
 
     return (
-    <Link to= {`/${username}/${twitterId}`} style= {{textDecoration: 'none', color: 'inherit' }}  > 
+    <Link to= {`/username/${id}`} style= {{textDecoration: 'none', color: 'inherit' }}  > 
         <div className = "post">
             <div className = "post__avatar">
                 <Avatar src={avatar}  />        

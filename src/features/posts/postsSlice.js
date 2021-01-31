@@ -1,4 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { 
+  createSlice,
+  createAsyncThunk,
+  createSelector,
+  createEntityAdapter,
+ } from '@reduxjs/toolkit'
 
 const initialState = [
     {
@@ -11,7 +16,7 @@ const initialState = [
         comments: getRandomArbitrary(0,500),
         shares: getRandomArbitrary(0,500),
         likes: getRandomArbitrary(0,500),
-        twitterId: uniqueTweetId(),          
+        id: "1",          
       },
     {
         displayName: "Riley Fox",
@@ -23,7 +28,7 @@ const initialState = [
         comments: getRandomArbitrary(0,500),
         shares: getRandomArbitrary(0,500),
         likes: getRandomArbitrary(0,500),
-        twitterId: uniqueTweetId(),          
+        id: "2",          
     },
     {
         displayName: "Riley Fox",
@@ -35,7 +40,7 @@ const initialState = [
         comments: getRandomArbitrary(0,500),
         shares: getRandomArbitrary(0,500),
         likes: getRandomArbitrary(0,500),
-        twitterId: uniqueTweetId(),       
+        id: "3",       
       }
     
 ]
@@ -59,6 +64,11 @@ const postsSlice = createSlice({
   })
 
   export const { postAdded } = postsSlice.actions
+
+  export const selectAllPosts = state => state.posts
+
+  export const selectPostById = (state, postId) =>
+  state.posts.find(post => post.id === postId)
 
   
   export default postsSlice.reducer

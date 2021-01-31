@@ -24,7 +24,7 @@ function App() {
 
                   
                   <Route exact path= "/" component={PostsList} />
-                  <Route exact path= "/:username/:twitterId" component={SinglePostPage} />
+                  <Route exact path= "/username/:id" component={SinglePostPage} />
 
                   </Switch>
                   <Widgets />

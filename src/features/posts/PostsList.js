@@ -25,7 +25,7 @@ export const PostsList = () => {
         comments = {post.comments}
         shares = {post.shares}
         likes = {post.likes}
-        twitterId ={post.twitterId}
+        id ={post.id}
         />
   ))
 
