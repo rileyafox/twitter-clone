@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "./TweetBox.css";
 import { Avatar, Button} from "@material-ui/core";
 import { useDispatch } from 'react-redux'
-
+import { nanoid } from '@reduxjs/toolkit'
 
 import { postAdded } from './features/posts/postsSlice'
 
@@ -38,6 +38,7 @@ function TweetBox() {
               comments: getRandomArbitrary(0,500),
               shares: getRandomArbitrary(0,500),
               likes: getRandomArbitrary(0,500),
+              id: nanoid()
             })
           )
     
